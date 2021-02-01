@@ -1,5 +1,6 @@
 defmodule RouterExample.Router do
   use Plug.Router
+  use Appsignal.Plug
 
   alias RouterExample.Stubs
 
@@ -48,4 +49,5 @@ defmodule RouterExample.Router do
     body = Jason.encode!(data)
     send_resp(conn, (status || 200), body)
   end
+
 end
